@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumen JavaScript + DOM + JSON</title>
+    <link rel="stylesheet" href="styles/stiles.css" />
+    <script src="js/functions.js" defer></script>
+  </head>
+  <body>
+    <a href="index.html" class="back-button">Volver al Inicio</a>
+
+    <div class="content">
+      <header>
+        <h1>JavaScript, DOM, JSON y Fetch</h1>
+        <p>
+          Conceptos fundamentales de JavaScript moderno, manipulación del DOM,
+          manejo de datos JSON y comunicación con APIs mediante Fetch.
+        </p>
+      </header>
+
+      <div class="topics-nav">
+        <h2>Temas de JavaScript</h2>
+        <div class="topics-grid">
+          <div class="topic-card" onclick="scrollToSection('inclusion')">
+            <h3>Inclusión de JavaScript</h3>
+            <p>Formas de incluir y cargar scripts en HTML</p>
+          </div>
+          <div class="topic-card" onclick="scrollToSection('estructura')">
+            <h3>Estructura y Funciones</h3>
+            <p>Sintaxis básica, variables y funciones en JavaScript</p>
+          </div>
+          <div class="topic-card" onclick="scrollToSection('dom')">
+            <h3>DOM Manipulation</h3>
+            <p>Manipulación de elementos HTML desde JavaScript</p>
+          </div>
+          <div class="topic-card" onclick="scrollToSection('json-fetch')">
+            <h3>JSON y Fetch</h3>
+            <p>Manejo de datos y comunicación con APIs</p>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <section id="inclusion">
+          <h2>1. Inclusión de JavaScript</h2>
+          <p>
+            El código JavaScript se puede incluir directamente en el HTML con la
+            etiqueta <code>&lt;script&gt;</code> o mediante un archivo externo
+            usando <code>src</code>:
+          </p>
+          <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+          <p>
+            Se recomienda ubicar los scripts al final del
+            <code>&lt;body&gt;</code> o usar <code>defer</code> para mejorar el
+            rendimiento.
+          </p>
+
+          <div class="highlight-box">
+            <strong>💡 Buena práctica:</strong> Usar <code>defer</code> permite
+            que el script se cargue en paralelo con el HTML pero se ejecute
+            después de que el DOM esté completamente construido.
+          </div>
+        </section>
+
+        <section id="estructura">
+          <h2>2. Estructura de Código</h2>
+          <p>
+            El código se compone de sentencias, separadas con punto y coma. Se
+            recomienda una sentencia por línea.
+          </p>
+          <p>Existen dos tipos de comentarios:</p>
+          <ul>
+            <li>De una línea: <code>// comentario</code></li>
+            <li>Multilínea: <code>/* comentario */</code></li>
+          </ul>
+
+          <h3>3. Funciones y Variables</h3>
+          <p>
+            Las funciones permiten reutilizar código. Se definen con la palabra
+            <code>function</code>:
+          </p>
+          <pre><code>function saludar() {
+  alert("Hola");
+}</code></pre>
+          <p>
+            Variables: <code>let</code> y <code>const</code> son las formas
+            modernas de definir variables. <code>let</code> permite reasignar
+            valores; <code>const</code> no.
+          </p>
+
+          <div class="demo-box">
+            <h4>Demo: Funciones y Variables</h4>
+            <input
+              type="text"
+              id="nombreInput"
+              class="demo-input"
+              placeholder="Escribe tu nombre"
+            />
+            <button class="demo-button" onclick="saludarPersona()">
+              Saludar
+            </button>
+            <button class="demo-button" onclick="mostrarHora()">
+              Mostrar Hora
+            </button>
+            <div id="saludoOutput" class="demo-output"></div>
+          </div>
+        </section>
+
+        <section id="dom">
+          <h2>4. DOM (Document Object Model)</h2>
+          <p>
+            El DOM es una representación en forma de árbol de los elementos
+            HTML.
+          </p>
+          <p>Tipos de nodos principales:</p>
+          <ul>
+            <li><strong>Document:</strong> raíz del árbol</li>
+            <li><strong>Element:</strong> etiquetas HTML</li>
+            <li><strong>Text:</strong> contenido textual</li>
+            <li><strong>Attr:</strong> atributos de las etiquetas</li>
+          </ul>
+
+          <h3>Acceso a elementos</h3>
+          <ul>
+            <li><code>getElementById('id')</code></li>
+            <li><code>getElementsByClassName('clase')</code></li>
+            <li><code>getElementsByTagName('etiqueta')</code></li>
+            <li><code>getElementsByName('name')</code></li>
+          </ul>
+
+          <h3>Manipulación</h3>
+          <ul>
+            <li>Crear elementos: <code>document.createElement()</code></li>
+            <li>Añadir texto: <code>document.createTextNode()</code></li>
+            <li>Añadir al DOM: <code>appendChild()</code></li>
+            <li>Eliminar: <code>element.remove()</code></li>
+          </ul>
+
+          <div class="demo-box">
+            <h4>Demo: Manipulación del DOM</h4>
+            <input
+              type="text"
+              id="textoElemento"
+              class="demo-input"
+              placeholder="Texto para el elemento"
+            />
+            <button class="demo-button" onclick="crearElemento()">
+              Crear Elemento
+            </button>
+            <button class="demo-button" onclick="cambiarColor()">
+              Cambiar Color
+            </button>
+            <button class="demo-button" onclick="limpiarElementos()">
+              Limpiar Todo
+            </button>
+            <div id="contenedorElementos" class="demo-output"></div>
+          </div>
+
+          <h3>Clases</h3>
+          <p>Usamos <code>classList</code> para manejar clases:</p>
+          <ul>
+            <li><code>add('clase')</code></li>
+            <li><code>remove('clase')</code></li>
+            <li><code>toggle('clase')</code></li>
+            <li><code>contains('clase')</code></li>
+          </ul>
+        </section>
+
+        <section id="json-fetch">
+          <h2>5. JSON (JavaScript Object Notation)</h2>
+          <p>
+            Formato de texto ligero para intercambio de datos. Es similar a los
+            objetos en JavaScript.
+          </p>
+          <pre><code>{
+  "nombre": "Ana",
+  "edad": 25,
+  "habilidades": ["HTML", "CSS", "JS"]
+}</code></pre>
+          <p>Métodos útiles:</p>
+          <ul>
+            <li>
+              <code>JSON.parse()</code>: convierte un texto JSON a objeto JS
+            </li>
+            <li>
+              <code>JSON.stringify()</code>: convierte un objeto JS a texto JSON
+            </li>
+          </ul>
+
+          <div class="demo-box">
+            <h4>Demo: JSON</h4>
+            <button class="demo-button" onclick="mostrarJSON()">
+              Crear Objeto
+            </button>
+            <button class="demo-button" onclick="convertirJSON()">
+              Convertir a JSON
+            </button>
+            <div id="jsonOutput" class="demo-output"></div>
+          </div>
+        </section>
+
+        <section id="http-fetch">
+          <h2>6. HTTP y Fetch</h2>
+          <p>
+            JavaScript puede comunicarse con servidores mediante HTTP. Los
+            métodos más comunes:
+          </p>
+          <ul>
+            <li><strong>GET:</strong> obtener información</li>
+            <li><strong>POST:</strong> enviar datos</li>
+          </ul>
+
+          <h3>Fetch</h3>
+          <p>
+            <code>fetch()</code> es la forma moderna de hacer solicitudes HTTP.
+            Devuelve una promesa.
+          </p>
+          <pre><code>fetch('https://api.example.com/datos')
+  .then(response =&gt; response.json())
+  .then(data =&gt; console.log(data));</code></pre>
+
+          <h3>Ejemplo con async/await</h3>
+          <pre><code>async function cargarDatos() {
+  const respuesta = await fetch('datos.json');
+  const datos = await respuesta.json();
+  console.log(datos);
+}</code></pre>
+
+          <div class="demo-box">
+            <h4>Demo: Fetch API</h4>
+            <button class="demo-button" onclick="obtenerPerrito()">
+              Obtener un Perrito Aleatorio
+            </button>
+            <button class="demo-button" onclick="obtenerDatos()">
+              Obtener Datos Usuario
+            </button>
+            <span
+              id="apiStatus"
+              class="api-status"
+              style="display: none"
+            ></span>
+            <div id="fetchOutput" class="demo-output"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          &copy; 2024 JavaScript, DOM, JSON y Fetch - Semana 4. Material
+          educativo interactivo.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

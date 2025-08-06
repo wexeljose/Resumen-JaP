@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumen de Introducción al Desarrollo Web</title>
+    <link rel="stylesheet" href="styles/stiles.css" />
+    <script src="js/functions.js" defer></script>
+  </head>
+  <body>
+    <a href="index.html" class="back-button">Volver al Inicio</a>
+
+    <div class="content">
+      <header>
+        <h1>Introducción al Desarrollo Web</h1>
+        <p>
+          El desarrollo web es una de las ramas de la programación con mayor
+          crecimiento. Permite crear sistemas accesibles desde cualquier
+          dispositivo sin necesidad de instalaciones previas.
+        </p>
+      </header>
+
+      <div class="topics-nav">
+        <h2>Temas Principales</h2>
+        <div class="topics-grid">
+          <div
+            class="topic-card"
+            onclick="scrollToSection('desarrollo-vs-diseno')"
+          >
+            <h3>Desarrollo vs Diseño Web</h3>
+            <p>Diferencias fundamentales entre el desarrollo y el diseño web</p>
+          </div>
+          <div class="topic-card" onclick="scrollToSection('arquitectura')">
+            <h3>Arquitectura Cliente-Servidor</h3>
+            <p>Fundamentos de la arquitectura web moderna</p>
+          </div>
+          <div class="topic-card" onclick="scrollToSection('roles')">
+            <h3>Roles y Etapas</h3>
+            <p>Equipos de desarrollo y proceso de creación</p>
+          </div>
+          <div class="topic-card" onclick="scrollToSection('tecnologias')">
+            <h3>Tecnologías Fundamentales</h3>
+            <p>HTML, CSS y JavaScript como base del desarrollo web</p>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <section id="desarrollo-vs-diseno">
+          <h2>Desarrollo Web vs. Diseño Web</h2>
+          <p>
+            Es importante diferenciar entre desarrollo web y diseño web, aunque
+            a menudo se confunden.
+          </p>
+          <ul>
+            <li>
+              <strong>Diseño Web:</strong> Se enfoca en la apariencia y la
+              experiencia del usuario de un sitio web. Incluye el diseño, la
+              navegación, la paleta de colores, y el diseño gráfico del logo,
+              priorizando la estética y la facilidad de uso.
+            </li>
+            <li>
+              <strong>Desarrollo Web:</strong> Se encarga de la funcionalidad y
+              las características del sitio. Implica la programación del
+              "backend", como los sistemas de registro, la gestión de contenido
+              y las aplicaciones de bases de datos.
+            </li>
+          </ul>
+        </section>
+
+        <section id="arquitectura">
+          <h2>Arquitectura de Software: Cliente-Servidor</h2>
+          <p>
+            La arquitectura de software define la estructura, el funcionamiento
+            y la interacción de las partes de un sistema. En el desarrollo web,
+            la arquitectura fundamental es la Cliente-Servidor.
+          </p>
+          <p>
+            Esta arquitectura consiste en un <strong>cliente</strong> (como un
+            navegador web) que solicita información o servicios a un
+            <strong>servidor</strong>, el cual procesa la petición y envía una
+            respuesta. Por ejemplo, al visitar Wikipedia, tu navegador es el
+            cliente que pide un artículo al servidor de Wikipedia.
+          </p>
+          <h3>Componentes:</h3>
+          <ul>
+            <li>
+              <strong>Cliente:</strong> Es un programa que inicia conexiones
+              para solicitar servicios y tiene una vida útil finita.
+            </li>
+            <li>
+              <strong>Servidor:</strong> Es un programa que ofrece un servicio
+              en una red, esperando peticiones de los clientes y con una vida
+              útil "interminable".
+            </li>
+          </ul>
+        </section>
+
+        <section id="roles">
+          <h2>Roles y Etapas en el Desarrollo Web</h2>
+          <p>
+            El desarrollo web moderno implica un trabajo en equipo con
+            diferentes roles especializados, a diferencia del antiguo rol único
+            de "Webmaster". Algunos roles clave son:
+          </p>
+          <ul>
+            <li>
+              <strong>Desarrollador/a Frontend:</strong> Programa la lógica del
+              lado del cliente, se encarga de la interfaz y consume datos del
+              servidor.
+            </li>
+            <li>
+              <strong>Desarrollador/a Backend:</strong> Programa la lógica del
+              lado del servidor, conectándose con la base de datos para
+              responder a las solicitudes.
+            </li>
+            <li>
+              <strong>Diseñador/a UI/UX:</strong> Se ocupa del aspecto visual y
+              la experiencia del usuario, utilizando software de diseño.
+            </li>
+            <li>
+              <strong>Desarrollador/a FullStack:</strong> Tiene habilidades
+              tanto en frontend como en backend.
+            </li>
+          </ul>
+          <h3>Etapas del Desarrollo:</h3>
+          <ol>
+            <li>
+              <strong>Planificación:</strong> Se documentan los requisitos y
+              tecnologías.
+            </li>
+            <li>
+              <strong>Diseño:</strong> Se define la interfaz gráfica y la
+              experiencia de usuario.
+            </li>
+            <li>
+              <strong>Desarrollo:</strong> Se construye y programa la
+              aplicación.
+            </li>
+            <li>
+              <strong>Despliegue:</strong> La aplicación se pone a disposición
+              de los usuarios.
+            </li>
+            <li>
+              <strong>Soporte:</strong> Se realizan correcciones y
+              mantenimiento.
+            </li>
+          </ol>
+        </section>
+
+        <section id="tecnologias">
+          <h2>Tecnologías Fundamentales</h2>
+          <h3>¿Qué son HTML y CSS?</h3>
+          <ul>
+            <li>
+              <strong>HTML (HyperText Markup Language):</strong> Es el lenguaje
+              de marcado para crear y estructurar el contenido de una página
+              web. Define elementos como textos, imágenes y enlaces.
+            </li>
+            <li>
+              <strong>CSS (Cascading Style Sheets):</strong> Es el lenguaje
+              usado para describir la presentación y el estilo visual de los
+              documentos HTML.
+            </li>
+          </ul>
+
+          <h3>¿Cómo incluir JavaScript?</h3>
+          <p>
+            Para añadir interactividad, se utiliza JavaScript. Se crea un
+            archivo con extensión <code>.js</code> y se incluye en el HTML
+            mediante la etiqueta <code>&lt;script&gt;</code>.
+          </p>
+
+          <h3>Herramientas del Desarrollador</h3>
+          <p>
+            Las herramientas esenciales para el desarrollo web incluyen un
+            editor de texto y las herramientas de inspección del navegador.
+          </p>
+          <ul>
+            <li>
+              <strong>Editor de Texto:</strong> Un programa para escribir código
+              en texto plano, como Visual Studio Code.
+            </li>
+            <li>
+              <strong>Herramienta del Desarrollador del Navegador:</strong>
+              Permite inspeccionar el código HTML, CSS y JavaScript de una
+              página, depurar errores y probar cambios en tiempo real. Se puede
+              acceder generalmente haciendo clic derecho y seleccionando
+              "Inspeccionar".
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 Introducción al Desarrollo Web. Material educativo.</p>
+      </footer>
+    </div>
+  </body>
+</html>

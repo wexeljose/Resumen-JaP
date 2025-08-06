@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/stiles.css" />
+    <title>Resumen CSS</title>
+    <script src="js/functions.js" defer></script>
+  </head>
+  <body>
+    <h1>Resumen de CSS</h1>
+
+    <h2>¿Qué es CSS?</h2>
+    <p>
+      CSS (Cascading Style Sheets) permite separar el contenido del diseño en
+      una página web. Se puede aplicar directamente en el HTML o mediante
+      archivos externos.
+    </p>
+
+    <h2>Formas de aplicar estilos</h2>
+    <ul>
+      <li>
+        En línea: usando el atributo <code>style</code> dentro de una etiqueta
+        HTML.
+      </li>
+      <li>
+        Interno: mediante la etiqueta <code>&lt;style&gt;</code> en el HTML.
+      </li>
+      <li>Externo: enlazando un archivo .css con <code>&lt;link&gt;</code>.</li>
+    </ul>
+
+    <h2>Sintaxis</h2>
+    <p>
+      Una regla CSS está formada por un selector y un bloque de declaración.
+      Cada declaración tiene una propiedad y un valor, separados por dos puntos
+      y finalizados con punto y coma.
+    </p>
+
+    <h2>Tipos de selectores</h2>
+    <ul>
+      <li><strong>E:</strong> todos los elementos E.</li>
+      <li><strong>*:</strong> todos los elementos.</li>
+      <li><strong>E.clase:</strong> elementos E con clase específica.</li>
+      <li><strong>E#id:</strong> elemento E con ID específico.</li>
+      <li><strong>E F:</strong> F dentro de E (descendiente).</li>
+      <li><strong>E > F:</strong> F hijo directo de E.</li>
+      <li><strong>E + F:</strong> F inmediatamente después de E.</li>
+      <li><strong>E, F:</strong> aplica a ambos.</li>
+    </ul>
+
+    <h2>Estilos en cascada</h2>
+    <p>El navegador aplica los estilos según una jerarquía:</p>
+    <ol>
+      <li>Estilos en línea.</li>
+      <li>Estilos en <code>&lt;style&gt;</code>.</li>
+      <li>Hojas de estilo externas.</li>
+      <li>Estilos por defecto del navegador.</li>
+    </ol>
+    <p>Si hay conflictos, gana el más específico o el último definido.</p>
+
+    <h2>Tamaños y distancias</h2>
+    <p>
+      Se definen usando unidades como <code>px</code>, <code>em</code>,
+      <code>%</code>, <code>vh</code>, <code>vw</code>, entre otras.
+    </p>
+    <p>
+      El tamaño puede expresarse en valores absolutos o relativos al contenedor
+      o al tipo de letra.
+    </p>
+  </body>
+</html>

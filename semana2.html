@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumen de HTML - Semana 2</title>
+    <link rel="stylesheet" href="styles/stiles.css" />
+    <script src="js/functions.js" defer></script>
+  </head>
+  <body>
+    <a href="index.html" class="back-button">Volver al Inicio</a>
+
+    <div class="content">
+      <header>
+        <h1>Conceptos Fundamentales de HTML</h1>
+        <p>
+          Una página web es un documento de texto que utiliza marcas, también
+          llamadas etiquetas, para estructurar el contenido y añadir elementos
+          como imágenes o enlaces. Los navegadores web interpretan estas
+          etiquetas para mostrar la página como fue diseñada.
+        </p>
+      </header>
+
+      <div class="topics-nav">
+        <h2>Temas de HTML</h2>
+        <div class="topics-grid">
+          <div class="topic-card" onclick="scrollToSection('sintaxis')">
+            <h3>Sintaxis de HTML</h3>
+            <p>Reglas y estructura básica de las etiquetas HTML</p>
+          </div>
+          <div class="topic-card" onclick="scrollToSection('estructura')">
+            <h3>Estructura Básica</h3>
+            <p>Elementos fundamentales de una página HTML5</p>
+          </div>
+          <div class="topic-card" onclick="scrollToSection('atributos')">
+            <h3>Atributos, Clases e IDs</h3>
+            <p>Información adicional y identificadores de elementos</p>
+          </div>
+          <div class="topic-card" onclick="scrollToSection('formularios')">
+            <h3>Formularios</h3>
+            <p>Controles y elementos para entrada de datos</p>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <section id="sintaxis">
+          <h2>Sintaxis de HTML</h2>
+          <p>
+            La sintaxis de HTML se basa en reglas que definen cómo deben
+            organizarse los elementos. Las etiquetas suelen venir en pares: una
+            de apertura y una de cierre. Por ejemplo,
+            <code>&lt;p&gt;</code> para abrir un párrafo y
+            <code>&lt;/p&gt;</code> para cerrarlo.
+          </p>
+          <ul>
+            <li>
+              <strong>Elementos anidados:</strong> Las etiquetas deben anidarse
+              correctamente, sin cruzarse.
+            </li>
+            <li>
+              <strong>Elementos vacíos:</strong> Algunas etiquetas, como
+              <code>&lt;hr&gt;</code> o <code>&lt;img&gt;</code>, no necesitan
+              cierre.
+            </li>
+            <li>
+              <strong>Comentarios:</strong> Puedes añadir comentarios que el
+              navegador no mostrará usando la sintaxis
+              <code>&lt;!-- comentario --&gt;</code>.
+            </li>
+          </ul>
+        </section>
+
+        <section id="estructura">
+          <h2>Estructura Básica de una Página</h2>
+          <p>
+            Una página HTML5 válida tiene una estructura fundamental que incluye
+            la declaración del tipo de documento, la cabecera y el cuerpo.
+          </p>
+
+          <div class="code-example">
+            <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;Título de la Página&lt;/title&gt;
+        &lt;link rel="stylesheet" href="estilo.css"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Contenido visible de la página.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre
+            >
+          </div>
+
+          <ul>
+            <li>
+              <strong>&lt;!DOCTYPE html&gt;:</strong> Es una declaración
+              obligatoria que define el documento como HTML5.
+            </li>
+            <li>
+              <strong>&lt;html&gt;:</strong> Es el elemento raíz que engloba
+              todo el contenido de la página.
+            </li>
+            <li>
+              <strong>&lt;head&gt;:</strong> Contiene metadatos e información de
+              control, como el título o enlaces a hojas de estilo, que
+              generalmente no se ven en la página.
+            </li>
+            <li>
+              <strong>&lt;body&gt;:</strong> Incluye todo el contenido visible
+              para el usuario en el navegador.
+            </li>
+          </ul>
+        </section>
+
+        <section id="atributos">
+          <h2>Atributos, Clases e IDs</h2>
+
+          <h3>Atributos</h3>
+          <p>
+            Los atributos proporcionan información adicional sobre las etiquetas
+            HTML y se especifican en la etiqueta de apertura. Se definen con un
+            nombre y un valor (ej: <code>atributo="valor"</code>). Algunos
+            atributos importantes son:
+          </p>
+          <ul>
+            <li>
+              <strong>id:</strong> Permite identificar un elemento de forma
+              única en toda la página. Ningún otro elemento puede tener el mismo
+              id.
+            </li>
+            <li>
+              <strong>class:</strong> Se usa para asignar uno o más nombres de
+              clase a un elemento, lo que permite aplicar estilos a múltiples
+              elementos que comparten la misma clase. Un elemento puede tener
+              varias clases, separadas por espacios.
+            </li>
+            <li>
+              <strong>style:</strong> Permite aplicar estilos CSS directamente a
+              un elemento, aunque se recomienda usar hojas de estilo externas.
+            </li>
+          </ul>
+        </section>
+
+        <section id="formularios">
+          <h2>Formularios</h2>
+          <p>
+            Un formulario permite al usuario introducir datos y enviarlos a un
+            servidor. Se define con la etiqueta <code>&lt;form&gt;</code>. Sus
+            atributos principales son:
+          </p>
+          <ul>
+            <li>
+              <strong>action:</strong> Indica la URL que procesará los datos del
+              formulario.
+            </li>
+            <li>
+              <strong>method:</strong> Define cómo se enviarán los datos, siendo
+              "get" o "post" los valores más comunes.
+            </li>
+          </ul>
+
+          <h3>Controles de Formulario</h3>
+          <p>
+            La mayoría de los controles se crean con la etiqueta
+            <code>&lt;input&gt;</code>. Atributos comunes para los controles
+            son:
+          </p>
+          <ul>
+            <li>
+              <strong>name:</strong> Identifica el control para que sus datos
+              puedan ser enviados.
+            </li>
+            <li>
+              <strong>value:</strong> Define el valor inicial o el valor enviado
+              por el control.
+            </li>
+            <li>
+              <strong>required:</strong> Hace que rellenar un campo sea
+              obligatorio.
+            </li>
+            <li>
+              <strong>placeholder:</strong> Muestra un texto de ejemplo en un
+              campo, que desaparece al escribir.
+            </li>
+            <li>
+              <strong>disabled:</strong> Deshabilita un control para que el
+              usuario no pueda interactuar con él.
+            </li>
+          </ul>
+
+          <h3>Tipos de &lt;input&gt;</h3>
+          <ul>
+            <li>
+              <strong>type="text":</strong> Un campo de texto de una línea.
+            </li>
+            <li>
+              <strong>type="password":</strong> Un campo donde el texto se
+              oculta. No ofrece seguridad en la transmisión de datos, solo
+              oculta la escritura.
+            </li>
+            <li>
+              <strong>type="number":</strong> Un campo para introducir números,
+              con opciones para definir un valor mínimo (min), máximo (max) y
+              los incrementos (step).
+            </li>
+            <li>
+              <strong>type="checkbox":</strong> Una casilla de verificación que
+              puede ser marcada o desmarcada.
+            </li>
+            <li>
+              <strong>type="radio":</strong> Un botón de opción. Varios botones
+              de radio con el mismo atributo "name" forman un grupo, donde solo
+              uno puede ser seleccionado.
+            </li>
+            <li>
+              <strong>type="submit":</strong> Un botón que envía el formulario.
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          &copy; 2024 Conceptos Fundamentales de HTML - Semana 2. Material
+          educativo.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
